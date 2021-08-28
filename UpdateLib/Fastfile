@@ -39,6 +39,9 @@ tag: tagName
 #    git push --tags
 push_git_tags
 
+# 改变pedspec version
+version_bump_podspec(path:"#{targetName}.podspec", version_number: tagName)
+
 #4. pod spec lint
 pod_lib_lint(allow_warnings: true)
 #5. pod repo push XXXX xxx.podspec
