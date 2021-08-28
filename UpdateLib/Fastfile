@@ -8,11 +8,15 @@ updateMessage = options[:message]
 
 # 具体这个巷道上面执行哪些行为
 
+# 改变pedspec version
+version_bump_podspec(path:"#{targetName}.podspec", version_number: tagName)
+
 # 1. pod install
 cocoapods(
 clean: true,
 podfile: "./Example/Podfile"
 )
+
 
 # 2. git add .
 git_add(path: ".")
@@ -39,8 +43,6 @@ tag: tagName
 #    git push --tags
 push_git_tags
 
-# 改变pedspec version
-version_bump_podspec(path:"#{targetName}.podspec", version_number: tagName)
 
 #4. pod spec lint
 pod_lib_lint(allow_warnings: true)
