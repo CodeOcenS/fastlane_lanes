@@ -7,6 +7,6 @@
 示例
 
 ```shell
-fastlane UpdateLib tag:版本号 target:库名
+fastlane UpdateLib tag:版本号 target:库名 message:更新日志
 ```
 

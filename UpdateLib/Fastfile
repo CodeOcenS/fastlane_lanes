@@ -1,9 +1,10 @@
-
 desc '使用这个航道, 可以快速的对自己的私有库, 进行升级维护'
 lane :UpdateLib do |options|
 
 tagName = options[:tag]
 targetName = options[:target]
+updateMessage = options[:message]
+
 
 # 具体这个巷道上面执行哪些行为
 
@@ -16,7 +17,7 @@ podfile: "./Example/Podfile"
 # 2. git add .
 git_add(path: ".")
 #    git commit -m 'xxx'
-git_commit(path: ".", message: "版本升级维护")
+git_commit(path: ".", message: updateMessage)
 #    git push origin master
 push_to_git_remote
 
